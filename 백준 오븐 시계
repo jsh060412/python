@@ -1,0 +1,15 @@
+H,M = input().split()
+t = input()
+H = int(H)
+M = int(M)
+t = int(t)
+
+M = M + t
+
+if M >= 60:
+    H += M // 60
+    M = M % 60
+    if H >= 24:
+        H -= 24
+
+print(H,M)
