@@ -1,0 +1,21 @@
+white_paper  = []
+for i in range(100):
+    a = []
+    for l in range(100):
+        a.append(0)
+    white_paper.append(a)
+    
+n = int(input())
+for - in range(n):
+    x,y = input().split()
+    x = int(x)
+    y = int(y)
+    for i in range(x,x+10):
+        for l in range(y,y+10):
+            white_paper[i][l] = 1
+cnt = 0
+for paper in white_paper:
+    cnt += paper.count(1)
+print(cnt)
+    
+    
