@@ -1,0 +1,29 @@
+from main3 import *
+#board판 준비하기
+board = ['*']*9
+#O,X중에서 고르기(컴퓨터의 문양은 반대문양으로 설정)<- inputOX()
+player,computer = input_OX()
+#board판 출력
+display_board(board)
+#사용자 자리 입력(입력받은 자리가 올바른 자리인지 확인)<- inputPOS()
+while True:
+    pos = input_POS(board)
+    board[pos] = player
+#board판 출력
+    display_board(board)
+#우승조건 확인<- victory()
+#우승조건에 성립하면, 플레이어 승 출력 후 게임 종료
+    if VICTORY(board,player):
+        print("Player Win!")
+        exit()
+#컴퓨터 입력(랜덤한 정수를 만들어서 해당 자리에 컴퓨터 문양 삽입<- randomPOS()
+    pos = random_POS(board)
+    board[pos] = computer
+#board판 출력
+    display_board(board)
+#컴퓨터 우승인지 확인<- victory()
+#컴퓨터가 우승조건에 성립하면 컴퓨터 승 출력 후 게임 종료
+    if VICTORY(board,computer):
+        print("Computer Win!")
+        exit()
+#board판에 넣을 공간이 없을 때까지 3 ~ 8번가지 반복
