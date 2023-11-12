@@ -1,0 +1,19 @@
+#파일 입출력 연습
+#test.py만들기,test.txt만들기 <-새로 만들기 - 파일 - log_in.txt
+#open("파일이름.확장자","모드""
+#'w' =(새로)쓰기
+#'r' =읽기
+#'e' = 추가하기
+file = open("log_in.txt",'r')
+
+Line = file.read()  #해당 파일에 있는 모든 문자들을 가지고온다.
+# while True:
+#     Line = file.readline() .rstrip() #"Hello\n"
+#     print(Line)
+#     if Line == '':
+#         break
+#Line = file.readlines()
+file.close()
+print(Line)
+with open("log_in.txt",'r',encoding='utf8') as file:
+    print(file.readlines())
